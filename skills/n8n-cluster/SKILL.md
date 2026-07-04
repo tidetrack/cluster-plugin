@@ -44,7 +44,8 @@ Hot-reload real: editar el .js alcanza; no se toca n8n.
 3. El MCP `n8n-mcp` bloquea `localhost` en modo strict → launcher con `WEBHOOK_SECURITY_MODE=moderate`.
 4. Los scans de patrones de secretos generan falsos positivos con sus propias definiciones y con protocolos que los documentan → excluir definiciones y limitar `[SEC-INJECTION]` a `00 INBOX`/`06 RAW`.
 5. El workflow con Schedule Trigger no se puede disparar por API pública → para probar end-to-end usar un workflow temporal con Webhook trigger (y borrarlo), o esperar el próximo tick del cron consultando `/executions`.
-6. `obsidian-git` ya hace los commits locales del vault ("vault backup:") — n8n NO commitea el vault; el host pushea.
+6. **Un PUT a un workflow ACTIVO des-registra su cron** aunque siga mostrando "activo" (descubierto 2026-07-04: W1 dejo de disparar tras el patch). Despues de TODO PUT via API: ciclar `deactivate` → `activate` para re-registrar el trigger.
+7. `obsidian-git` ya hace los commits locales del vault ("vault backup:") — n8n NO commitea el vault; el host pushea.
 
 ## Checklist para un workflow nuevo
 
