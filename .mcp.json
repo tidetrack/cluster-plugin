@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "n8n": {
+      "command": "/Users/francodiazpizarro/Desktop/Antigravity/n8n-cluster/n8n-mcp-launcher.sh",
+      "args": [],
+      "env": {}
+    }
+  }
+}

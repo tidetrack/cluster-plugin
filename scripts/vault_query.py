@@ -278,6 +278,97 @@ def cmd_transcripcion(slug, fecha=None, frase=None):
     return out
 
 
+MONEY_RE = re.compile(
+    r"(USD?\s?\$?\s?[\d.,]+(?:\s?/\s?mes)?|\$\s?[\d.,]+(?:\.\d{3})*(?:\s?ARS)?|ARS\s?\$?\s?[\d.,]+|[\d.,]+\s?(?:USD|ARS)(?:\s?/\s?mes)?)",
+    re.I)
+
+
+def cmd_propuestas(slug):
+    """Cronologia de propuestas/pricing de un cliente: registros *propuesta*/*cotizacion* + pagina 02."""
+    out = {"slug": slug, "items": []}
+    candidatos = []
+    for f in glob.glob(p("01 REGISTRO", "*.md")) + glob.glob(p("06 RAW/notas", "*.md")):
+        base = norm(os.path.basename(f))
+        if norm(slug) not in base:
+            continue
+        if not any(k in base for k in ("propuesta", "cotizacion", "pricing", "fee", "oferta")):
+            continue
+        candidatos.append(f)
+    for f in sorted(set(candidatos)):
+        text = read(f)
+        fm = frontmatter(text)
+        montos = MONEY_RE.findall(body_of(text))
+        # dedup preservando orden, max 6
+        vistos, m_unicos = set(), []
+        for m in montos:
+            k = re.sub(r"\s", "", m.lower())
+            if k not in vistos:
+                vistos.add(k)
+                m_unicos.append(m.strip())
+            if len(m_unicos) >= 6:
+                break
+        unit = fm.get("unit", "")
+        out["items"].append({
+            "file": rel(f), "date": date_of(f, fm), "type": tipo_of(f, fm),
+            "frente": unit if isinstance(unit, str) else "/".join(unit),
+            "titulo": titulo_of(text, f), "montos": m_unicos,
+        })
+    out["items"].sort(key=lambda i: i["date"] or "0000", reverse=True)
+    # pagina 02: secciones que mencionan propuesta (solo referencia)
+    for f in glob.glob(p("02 PROYECTOS", "*.md")):
+        if norm(slug) in norm(os.path.basename(f)):
+            out["pagina"] = rel(f)
+            out["menciones_pagina"] = sum(
+                1 for l in read(f).splitlines() if "propuesta" in norm(l))
+            break
+    return out
+
+
+def cmd_bitacora(desde, hasta=None, cliente=None, unit=None):
+    """Eventos de 01 REGISTRO en un rango: 1 linea por registro."""
+    eventos = []
+    for f in glob.glob(p("01 REGISTRO", "*.md")):
+        text = read(f, 4000)
+        fm = frontmatter(text)
+        date = date_of(f, fm)
+        if not date or date < desde or (hasta and date > hasta):
+            continue
+        if cliente and not matches_cliente(f, fm, cliente):
+            continue
+        if unit:
+            u = fm.get("unit", [])
+            u = u if isinstance(u, list) else [u]
+            if norm(unit) not in [norm(x) for x in u]:
+                continue
+        eventos.append({"date": date, "type": tipo_of(f, fm),
+                        "cliente": fm.get("cliente", ""),
+                        "titulo": titulo_of(text, f), "file": rel(f),
+                        "author": fm.get("author") or fm.get("autor") or ""})
+    eventos.sort(key=lambda e: e["date"])
+    return {"desde": desde, "hasta": hasta or "hoy", "n": len(eventos), "eventos": eventos}
+
+
+def cmd_tareas(slug, status=None):
+    """Snapshot de tareas ClickUp del cliente desde 06 RAW/clickup (ultima ingesta)."""
+    tareas = []
+    for f in glob.glob(p("06 RAW/clickup", "*.md")):
+        if norm(slug) not in norm(os.path.basename(f)):
+            continue
+        head = read(f, 3000)
+        fm = frontmatter(head)
+        st = str(fm.get("status", ""))
+        if status and norm(status) not in norm(st):
+            continue
+        tareas.append({"task_id": fm.get("task_id", ""),
+                       "nombre": fm.get("task_name") or fm.get("nombre") or titulo_of(head, f),
+                       "status": st, "assignee": fm.get("assignee", ""),
+                       "due": fm.get("due_date") or fm.get("due") or "",
+                       "file": rel(f)})
+    tareas.sort(key=lambda t: (t["status"], str(t["due"])))
+    return {"slug": slug, "fuente": "snapshot 06 RAW/clickup (ultima ingesta P1)",
+            "n": len(tareas), "tareas": tareas}
+
+
 # ---------- main ----------
 
 def main():
@@ -286,7 +377,13 @@ def main():
     ap.add_argument("--cliente", metavar="SLUG")
     ap.add_argument("--buscar", metavar="FRASE")
     ap.add_argument("--transcripcion", metavar="SLUG")
+    ap.add_argument("--propuestas", metavar="SLUG")
+    ap.add_argument("--bitacora", action="store_true")
+    ap.add_argument("--tareas", metavar="SLUG")
     ap.add_argument("--desde", metavar="YYYY-MM-DD")
+    ap.add_argument("--hasta", metavar="YYYY-MM-DD")
+    ap.add_argument("--unit", metavar="UNIT")
+    ap.add_argument("--status", metavar="STATUS")
     ap.add_argument("--tipo", metavar="TIPO")
     ap.add_argument("--fecha", metavar="YYYY-MM-DD")
     ap.add_argument("--frase", metavar="FRASE")
@@ -300,6 +397,15 @@ def main():
                          desde=args.desde, tipo=args.tipo)
     elif args.transcripcion:
         out = cmd_transcripcion(args.transcripcion, fecha=args.fecha, frase=args.frase)
+    elif args.propuestas:
+        out = cmd_propuestas(args.propuestas)
+    elif args.bitacora:
+        if not args.desde:
+            sys.exit("ERROR: --bitacora requiere --desde YYYY-MM-DD")
+        out = cmd_bitacora(args.desde, hasta=args.hasta,
+                           cliente=(args.filtro_cliente or args.cliente), unit=args.unit)
+    elif args.tareas:
+        out = cmd_tareas(args.tareas, status=args.status)
     elif args.cliente:
         out = cmd_cliente(args.cliente)
     else:
