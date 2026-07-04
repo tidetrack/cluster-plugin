@@ -1,11 +1,14 @@
 {
   "name": "cluster",
-  "owner": { "name": "Cluster" },
+  "owner": {
+    "name": "Cluster"
+  },
   "plugins": [
     {
       "name": "cluster-os",
       "source": ".",
       "description": "Sistema operativo del Cluster (vault Obsidian): busqueda, produccion, agentes por rol, hooks de calidad."
     }
-  ]
+  ],
+  "description": "Marketplace del Cluster: plugins internos del equipo (Franco, Sergio, Dima)."
 }
