@@ -24,6 +24,7 @@ Presentale al usuario esta guía de cluster-os, adaptada a quién es (leé el pe
 | Correr la ingesta del INBOX ya | `/cluster-os:ingesta` | no espera a las 23:40 |
 | Lint del grafo del vault | `/cluster-os:lint` | links rotos, frontmatter, bidireccionalidad |
 | Reporte de productividad semanal a demanda | `/cluster-os:reporte-semanal` | |
+| Dar de alta un cliente en Twenty CRM (subdominio + instancia + modelo de datos) | `/cluster-os:setup-crm` | P17; solo Franco; `--mock` para datos de demo |
 
 ## Agentes (se invocan pidiéndolos por nombre)
 

@@ -1,4 +1,4 @@
-# cluster-os v1.0
+# cluster-os v1.2
 
 Plugin de Claude Code / Cowork del Cluster (Franco, Sergio, Dima).
 El sistema operativo del vault, instalable: comandos de busqueda y produccion,
@@ -11,7 +11,7 @@ skills de minutas/analisis, agentes por rol, hooks de calidad.
 
 ## Comandos
 Busqueda: `/cliente` `/buscar` `/transcripcion` `/propuesta` `/bitacora` `/tareas`
-Produccion: `/analista` (campanas, metodo de la casa) `/minuta` (P7) `/reporte-semanal` `/lint` `/ingesta`
+Produccion: `/analista` (campanas, metodo de la casa) `/minuta` (P7) `/reporte-semanal` `/lint` `/ingesta` `/setup-crm` (P17, alta Twenty CRM)
 Sistema: `/setup` `/help`
 
 ## Agentes
