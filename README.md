@@ -1,4 +1,4 @@
-# cluster-os v1.2
+# cluster-os v1.3
 
 Plugin de Claude Code / Cowork del Cluster (Franco, Sergio, Dima).
 El sistema operativo del vault, instalable: comandos de busqueda y produccion,
@@ -11,11 +11,11 @@ skills de minutas/analisis, agentes por rol, hooks de calidad.
 
 ## Comandos
 Busqueda: `/cliente` `/buscar` `/transcripcion` `/propuesta` `/bitacora` `/tareas`
-Produccion: `/analista` (campanas, metodo de la casa) `/minuta` (P7) `/reporte-semanal` `/lint` `/ingesta` `/setup-crm` (P17, alta Twenty CRM)
+Produccion: `/analista` (campanas, metodo de la casa) `/minuta` (P7) `/reporte-semanal` `/lint` `/ingesta` `/meister` (funnel MeisterTask UMOH: trae + analiza) `/setup-crm` (P17, alta Twenty CRM)
 Sistema: `/setup` `/help`
 
 ## Agentes
-Operativos: `validador-propuestas` · `sparring-propuestas` (Franco) · `sparring-ux` (Dima) · `pre-reunion`
+Operativos: `validador-propuestas` · `sparring-propuestas` (Franco) · `sparring-ux` (Dima) · `pre-reunion` · `meistertask-funnel` (datos MeisterTask → Supabase del portal UMOH + snapshot del funnel)
 Infraestructura (vault-ops, uso Franco/rutinas): vault-maintenance + 12 especialistas.
 
 ## Hooks
