@@ -1,4 +1,4 @@
-# cluster-os v1.3
+# cluster-os v1.6
 
 Plugin de Claude Code / Cowork del Cluster (Franco, Sergio, Dima).
 El sistema operativo del vault, instalable: comandos de busqueda y produccion,
@@ -12,7 +12,7 @@ skills de minutas/analisis, agentes por rol, hooks de calidad.
 ## Comandos
 Busqueda: `/cliente` `/buscar` `/transcripcion` `/propuesta` `/bitacora` `/tareas`
 Produccion: `/analista` (campanas, metodo de la casa) `/minuta` (P7) `/reporte-semanal` `/lint` `/ingesta` `/meister` (funnel MeisterTask UMOH: trae + analiza) `/setup-crm` (P17, alta Twenty CRM)
-Sistema: `/setup` `/help`
+Sistema: `/setup` `/help` `/setup-mcp-obsidian` (conecta el vault por MCP via el plugin Local REST API with MCP de Obsidian, scope user) `/vault` (consulta el vault via MCP desde repos que no lo tienen montado — umoh-client-portal, planilla-pymes, etc.)
 
 ## Agentes
 Operativos: `validador-propuestas` · `sparring-propuestas` (Franco) · `sparring-ux` (Dima) · `pre-reunion` · `meistertask-funnel` (datos MeisterTask → Supabase del portal UMOH + snapshot del funnel)
@@ -26,6 +26,12 @@ Infraestructura (vault-ops, uso Franco/rutinas): vault-maintenance + 12 especial
 `.mcp.json` define n8n via launcher local (path de la maquina de Franco — en otras maquinas
 ese conector simplemente no conecta; el resto del plugin funciona igual). Los conectores
 OAuth (ClickUp, Supabase, MeisterTask, Drive, Ads) se autentican por app; `/setup` lista cuales faltan.
+El conector `obsidian` (vault via REST API/MCP local, plugin Community de Obsidian) se registra
+por maquina con `/setup-mcp-obsidian` — no vive en `.mcp.json` porque requiere un API key
+por instalacion que nunca se commitea al repo. Al quedar en `--scope user`, esas tools
+(`mcp__obsidian__*`) y el comando `/vault` estan disponibles en CUALQUIER repo de la maquina,
+no solo en el vault — es la via para que los repos de producto (sin la carpeta del vault
+montada) consulten el vault como fuente de informacion.
 
 ## Regla de la casa
 El vault es la fuente de verdad. Nada se inventa: toda afirmacion cita fuente y fecha. Sin emojis.
