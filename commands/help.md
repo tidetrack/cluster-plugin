@@ -13,7 +13,8 @@ Presentale al usuario esta guía de cluster-os, adaptada a quién es (leé el pe
 | La frase textual dicha en una reunión | `/cluster-os:transcripcion` | `/cluster-os:transcripcion indias 2026-05-21 "cuentas por cobrar"` |
 | Qué pasó en un rango de fechas | `/cluster-os:bitacora` | `/cluster-os:bitacora 2026-06-20 2026-06-30` |
 | La cronología de propuestas/pricing de un cliente | `/cluster-os:propuesta` | `/cluster-os:propuesta indias` |
-| Las tareas ClickUp de un cliente | `/cluster-os:tareas` | `/cluster-os:tareas indias cotizaciones` |
+| Las tareas ClickUp de un cliente (vista tabla) | `/cluster-os:tareas` | `/cluster-os:tareas indias cotizaciones` |
+| Contextualizarte a fondo en un ítem/proyecto de ClickUp (comentarios completos, fechas, asignados) | `/cluster-os:clickup` | `/cluster-os:clickup 86ahth32g` |
 
 ## Producir
 

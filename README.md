@@ -1,4 +1,4 @@
-# cluster-os v1.6
+# cluster-os v1.7
 
 Plugin de Claude Code / Cowork del Cluster (Franco, Sergio, Dima).
 El sistema operativo del vault, instalable: comandos de busqueda y produccion,
@@ -10,7 +10,7 @@ skills de minutas/analisis, agentes por rol, hooks de calidad.
 3. `/cluster-os:help` — el glosario de que usar para cada cosa.
 
 ## Comandos
-Busqueda: `/cliente` `/buscar` `/transcripcion` `/propuesta` `/bitacora` `/tareas`
+Busqueda: `/cliente` `/buscar` `/transcripcion` `/propuesta` `/bitacora` `/tareas` `/clickup` (contextualizacion profunda de un item/proyecto ClickUp: comentarios completos, tiempos por estado, asignados; solo lectura)
 Produccion: `/analista` (campanas, metodo de la casa) `/minuta` (P7) `/reporte-semanal` `/lint` `/ingesta` `/meister` (funnel MeisterTask UMOH: trae + analiza) `/setup-crm` (P17, alta Twenty CRM)
 Sistema: `/setup` `/help` `/setup-mcp-obsidian` (conecta el vault por MCP via el plugin Local REST API with MCP de Obsidian, scope user) `/vault` (consulta el vault via MCP desde repos que no lo tienen montado — umoh-client-portal, planilla-pymes, etc.)
 
