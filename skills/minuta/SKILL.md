@@ -1,6 +1,8 @@
 ---
-description: Procesa una reunion completa — minuta de marca (.docx) + registro .md al INBOX + transcripcion verbatim al vault (P7)
-argument-hint: <archivo.txt|.m4a> [prefijo UM|/TT|/SF|/CL|/CR|]
+name: minuta
+description: "Procesa una reunion completa — minuta de marca (.docx) + registro .md al INBOX + transcripcion verbatim al vault (P7)"
+argument-hint: "<archivo.txt|.m4a> [prefijo UM|/TT|/SF|/CL|/CR|]"
+disable-model-invocation: true
 ---
 
 Procesá la reunión: **$ARGUMENTS** siguiendo el protocolo P7 completo del Cluster. Sin emojis, tildes correctas, nunca inventar.

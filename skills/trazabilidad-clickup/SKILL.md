@@ -1,5 +1,7 @@
 ---
-description: Cierre de trazabilidad diaria en ClickUp — comenta avance real en retrasadas y las patea a mañana, bitácora del día en los hubs Data, follow-up de ofertas frías
+name: trazabilidad-clickup
+description: "Cierre de trazabilidad diaria en ClickUp — comenta avance real en retrasadas y las patea a mañana, bitácora del día en los hubs Data, follow-up de ofertas frías"
+disable-model-invocation: true
 ---
 
 Corré el cierre de trazabilidad diaria en ClickUp — la corrida de fin de día ("dejá trazabilidad en las tareas y pateá lo retrasado"). Actuás como **Umitoh** (cuenta umoh crew, id 132197532), firmás cada comentario "— Umitoh", sin emojis. Leé el perfil `$VAULT/.claude/cluster-os.json` (si no existe, sugerí `/cluster-os:setup` y pará); $VAULT sale de ahí.

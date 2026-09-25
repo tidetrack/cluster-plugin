@@ -1,6 +1,7 @@
 ---
-description: Analisis de campanas con el metodo de la casa — TOFU/MOFU/BOFU, semanas ISO, ROAS por mes de cierre, coherencia validada
-argument-hint: <cliente> <periodo W##|mes> [--subastas] [--docx]
+name: analista
+description: "Analisis de campanas con el metodo de la casa — TOFU/MOFU/BOFU, semanas ISO, ROAS por mes de cierre, coherencia validada. Usar cuando pidan analizar campañas, ROAS o performance de un cliente por semana o por mes."
+argument-hint: "<cliente> <periodo W##|mes> [--subastas] [--docx]"
 ---
 
 Corré el análisis de campañas del método Cluster para: **$ARGUMENTS**. Este comando codifica el método de Franco (informes Prepagas 2026-06-25/06-30) — respetalo al pie de la letra. Sin emojis. NUNCA inventar una cifra: dato faltante = stub explícito.

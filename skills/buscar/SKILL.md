@@ -1,6 +1,7 @@
 ---
-description: Busqueda full-text en el vault con filtros por cliente, fecha y tipo — sin falsos positivos
-argument-hint: <frase> [cliente] [desde YYYY-MM-DD]
+name: buscar
+description: "Busqueda full-text en el vault con filtros por cliente, fecha y tipo — sin falsos positivos. Usar cuando haya que encontrar dónde se habló de algo en el vault."
+argument-hint: "<frase> [cliente] [desde YYYY-MM-DD]"
 ---
 
 Buscá en el vault Cluster: **$ARGUMENTS**. Interpretá los argumentos: el primer término entre comillas (o el texto principal) es la frase; si hay un nombre de cliente conocido, es el filtro `--filtro-cliente`; si hay una fecha YYYY-MM-DD, es `--desde`.

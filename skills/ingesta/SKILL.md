@@ -1,5 +1,7 @@
 ---
-description: Corre la ingesta del INBOX ya (P1 a demanda) — doble escritura, sin esperar a la rutina de las 23:40
+name: ingesta
+description: "Corre la ingesta del INBOX ya (P1 a demanda) — doble escritura, sin esperar a la rutina de las 23:40"
+disable-model-invocation: true
 ---
 
 Corré P1 (ingesta diaria) a demanda. SOLO usuario fran (verificá el perfil `$VAULT/.claude/cluster-os.json`; si el usuario es sergio/dima, explicá que la ingesta la corre Franco o la rutina nocturna, y que su INBOX ya quedó en cola).

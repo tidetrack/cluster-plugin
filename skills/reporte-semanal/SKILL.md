@@ -1,6 +1,7 @@
 ---
-description: Reporte de productividad semanal a demanda — usuario x UEN x cliente + tipos de item ClickUp + cycle-time y aging
-argument-hint: [unidad]
+name: reporte-semanal
+description: "Reporte de productividad semanal a demanda — usuario x UEN x cliente + tipos de item ClickUp + cycle-time y aging. Usar cuando pidan el reporte de productividad de la semana."
+argument-hint: "[unidad]"
 ---
 
 Generá el reporte de productividad semanal a demanda (la fase E de Vault | Semanal, sin esperar al lunes). Filtro opcional por unidad: **$ARGUMENTS**.

@@ -1,5 +1,7 @@
 ---
-description: Trae y analiza el funnel comercial de MeisterTask de un cliente UMOH (default prepagas) — refresca leads → Supabase y reporta el estado del funnel
+name: meister
+description: "Trae y analiza el funnel comercial de MeisterTask de un cliente UMOH (default prepagas) — refresca leads → Supabase y reporta el estado del funnel"
+disable-model-invocation: true
 ---
 
 Refrescá y analizá el funnel comercial de MeisterTask de un cliente UMOH. Cliente por defecto: **prepagas** ("Prepaga Boys"). Si Franco nombra otro cliente integral con MOFU en MeisterTask, usá ese `--client-slug` y su `projectId`.

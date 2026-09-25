@@ -1,6 +1,7 @@
 ---
-description: Vista de tareas ClickUp de un cliente — data viva por MCP o snapshot del vault si no hay conexion
-argument-hint: <cliente> [status]
+name: tareas
+description: "Vista de tareas ClickUp de un cliente — data viva por MCP o snapshot del vault si no hay conexion. Usar cuando pregunten por las tareas de un cliente en ClickUp."
+argument-hint: "<cliente> [status]"
 ---
 
 Mostrá las tareas ClickUp del cliente: **$ARGUMENTS** (segundo término opcional = filtro de status: open, in progress, review, cotizaciones, data, closed).

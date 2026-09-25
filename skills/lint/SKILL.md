@@ -1,6 +1,7 @@
 ---
-description: Lint del grafo del vault — links rotos, raws sin wiki_page, bidireccionalidad, frontmatter — con reparacion segura opcional
-argument-hint: [--fix]
+name: lint
+description: "Lint del grafo del vault — links rotos, raws sin wiki_page, bidireccionalidad, frontmatter — con reparacion segura opcional. Usar cuando pidan revisar la salud del vault, links rotos o frontmatter."
+argument-hint: "[--fix]"
 ---
 
 Corré el lint del vault Cluster: **$ARGUMENTS**.

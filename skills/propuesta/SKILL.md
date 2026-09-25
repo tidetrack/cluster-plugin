@@ -1,6 +1,7 @@
 ---
-description: Cronologia de propuestas y pricing de un cliente — tabla con la vigente arriba, todo con fuente
-argument-hint: <cliente>
+name: propuesta
+description: "Cronologia de propuestas y pricing de un cliente — tabla con la vigente arriba, todo con fuente. Usar cuando pregunten qué se le cotizó a un cliente o a qué precio."
+argument-hint: "<cliente>"
 ---
 
 Armá la cronología de propuestas/pricing del cliente **$ARGUMENTS**. Reglas: nunca inventar; si un estado no tiene evidencia, decir "sin confirmar"; sin emojis.

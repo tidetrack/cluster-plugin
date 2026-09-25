@@ -1,7 +1,7 @@
 {
   "name": "cluster-os",
-  "description": "Sistema operativo del Cluster: comandos de consulta y produccion sobre el vault Obsidian, agentes por rol (fran/sergio/dima), skills de minutas y analisis, hooks de calidad. Requiere el vault Cluster montado. Correr /setup en la primera sesion.",
-  "version": "1.8.0",
+  "description": "Sistema operativo del Cluster: skills de consulta y produccion sobre el vault Obsidian (invocables como /nombre), agentes por rol (fran/sergio/dima), skills de minutas y analisis, hooks de calidad. Requiere el vault Cluster montado. Correr /setup en la primera sesion.",
+  "version": "2.0.0",
   "author": {
     "name": "Franco Diaz Pizarro / Cluster"
   }

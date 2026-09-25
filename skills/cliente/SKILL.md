@@ -1,6 +1,7 @@
 ---
-description: Estado completo de un cliente del vault en segundos — sintesis, ultimos movimientos, ofertas abiertas, proximos pasos
-argument-hint: <cliente>
+name: cliente
+description: "Estado completo de un cliente del vault en segundos — sintesis, ultimos movimientos, ofertas abiertas, proximos pasos. Usar cuando pregunten cómo está un cliente o qué pasó con él."
+argument-hint: "<cliente>"
 ---
 
 Armá el estado completo del cliente **$ARGUMENTS** del vault Cluster. Reglas: nunca inventar (todo cita fuente con wikilink y fecha), sin emojis, conciso.

@@ -1,8 +1,9 @@
 ---
-description: Glosario de cluster-os — qué comando o agente conviene usar según lo que necesitás
+name: help
+description: "Glosario de cluster-os — qué skill o agente conviene usar según lo que necesitás. Usar cuando pregunten qué skills o agentes hay en cluster-os o cuál conviene para algo."
 ---
 
-Presentale al usuario esta guía de cluster-os, adaptada a quién es (leé el perfil `$VAULT/.claude/cluster-os.json`; si no existe, sugerí correr `/cluster-os:setup` primero). Sin emojis. Si el usuario contó qué está intentando hacer, recomendale directamente el comando correcto en lugar de listar todo.
+Presentale al usuario esta guía de cluster-os, adaptada a quién es (leé el perfil `$VAULT/.claude/cluster-os.json`; si no existe, sugerí correr `/cluster-os:setup` primero). Sin emojis. Si el usuario contó qué está intentando hacer, recomendale directamente la skill correcta en lugar de listar todo.
 
 ## Buscar información en el vault
 
@@ -38,6 +39,6 @@ Presentale al usuario esta guía de cluster-os, adaptada a quién es (leé el pe
 
 ## Reglas de la casa (siempre activas)
 
-Nunca inventar: toda afirmación cita fuente y fecha. Sin emojis. Sergio y Dima escriben solo en su INBOX; el resto del vault lo escribe la ingesta. Ante la duda de qué comando usar: `/cluster-os:buscar` es el comodín.
+Nunca inventar: toda afirmación cita fuente y fecha. Sin emojis. Sergio y Dima escriben solo en su INBOX; el resto del vault lo escribe la ingesta. Ante la duda de qué skill usar: `/cluster-os:buscar` es el comodín.
 
-Todos los comandos y agentes listados están disponibles en esta versión.
+Todas las skills y agentes listados están disponibles en esta versión.

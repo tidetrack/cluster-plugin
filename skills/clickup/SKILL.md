@@ -1,6 +1,7 @@
 ---
-description: Contextualización profunda de un ítem o proyecto ClickUp — lee comentarios completos, fechas, asignados y estado real antes de opinar o actuar
-argument-hint: <task_id | url | nombre o cliente>
+name: clickup
+description: "Contextualización profunda de un ítem o proyecto ClickUp — lee comentarios completos, fechas, asignados y estado real antes de opinar o actuar. Usar antes de opinar o actuar sobre una tarea, oferta o proyecto de ClickUp."
+argument-hint: "<task_id | url | nombre o cliente>"
 ---
 
 Contextualizate en ClickUp sobre **$ARGUMENTS** antes de responder o actuar sobre eso. Este comando es de **solo lectura** — no comenta, no cambia status, no reasigna. Si después de leer hace falta escribir en ClickUp, decíselo al usuario y pedí confirmación explícita en un paso aparte; no lo hagas dentro de esta misma corrida. Sin emojis, nunca inventar — toda afirmación con su ID de tarea y la fecha del comentario/campo que la respalda.

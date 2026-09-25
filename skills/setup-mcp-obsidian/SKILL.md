@@ -1,5 +1,7 @@
 ---
-description: Conecta el MCP local de Obsidian (Local REST API with MCP) a Claude Code — registra, verifica y deja el vault accesible por MCP en todas las sesiones (una vez por maquina)
+name: setup-mcp-obsidian
+description: "Conecta el MCP local de Obsidian (Local REST API with MCP) a Claude Code — registra, verifica y deja el vault accesible por MCP en todas las sesiones (una vez por maquina)"
+disable-model-invocation: true
 ---
 
 Sos el instalador del conector MCP de Obsidian para cluster-os. Ejecutá estos pasos EN ORDEN y reportá el resultado como checklist. Sin emojis. Idempotente: si ya está conectado, confirmalo y no toques nada.

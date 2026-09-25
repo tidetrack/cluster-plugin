@@ -1,6 +1,7 @@
 ---
-description: Que paso en un rango de fechas — tabla cronologica de eventos del vault, filtrable por cliente o unidad
-argument-hint: <desde YYYY-MM-DD> [hasta] [cliente|unit]
+name: bitacora
+description: "Que paso en un rango de fechas — tabla cronologica de eventos del vault, filtrable por cliente o unidad. Usar cuando pregunten qué pasó entre dos fechas o en un período."
+argument-hint: "<desde YYYY-MM-DD> [hasta] [cliente|unit]"
 ---
 
 Armá la bitácora del rango pedido: **$ARGUMENTS**. Interpretá: primera fecha = desde; segunda fecha (opcional) = hasta; un nombre de cliente o unidad (umoh/tidetrack/software-factory/cluster/crew) = filtro.

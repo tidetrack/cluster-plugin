@@ -1,6 +1,8 @@
 ---
-description: Da de alta un cliente nuevo en Twenty CRM (VPS Software Factory) — subdominio, instancia, modelo de datos y doble escritura (P17)
-argument-hint: <cliente> [--mock]
+name: setup-crm
+description: "Da de alta un cliente nuevo en Twenty CRM (VPS Software Factory) — subdominio, instancia, modelo de datos y doble escritura (P17)"
+argument-hint: "<cliente> [--mock]"
+disable-model-invocation: true
 ---
 
 Da de alta al cliente **$ARGUMENTS** en la infraestructura Twenty CRM del Cluster (`[cliente].crm.umohcrew.com`), siguiendo P17 paso a paso. Reglas: nunca inventar el esquema de datos (pedilo si no está en el vault), fiel al esquema dado salvo pedido explícito de mejorarlo, doble escritura obligatoria al cierre. Sin emojis.

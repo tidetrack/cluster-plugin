@@ -1,5 +1,6 @@
 ---
-description: Consulta el vault Cluster via MCP (sin necesitar la carpeta del vault montada) — para usar desde cualquier repo (umoh-client-portal, planilla-pymes, indias-app-fleteros...)
+name: vault
+description: "Consulta el vault Cluster via MCP (sin necesitar la carpeta del vault montada) — para usar desde cualquier repo (umoh-client-portal, planilla-pymes, indias-app-fleteros...). Usar desde repos que no tienen el vault montado cuando haya que consultarlo."
 argument-hint: "<pregunta o frase a buscar>"
 ---
 

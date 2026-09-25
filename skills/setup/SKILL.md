@@ -1,5 +1,7 @@
 ---
-description: Setup de cluster-os — contextualiza el plugin con el vault Cluster y tu identidad (correr una vez por maquina)
+name: setup
+description: "Setup de cluster-os — contextualiza el plugin con el vault Cluster y tu identidad (correr una vez por maquina)"
+disable-model-invocation: true
 ---
 
 Sos el instalador del plugin cluster-os. Ejecutá estos 7 pasos EN ORDEN y reportá el resultado como checklist. Sin emojis. Idempotente: si ya hay un perfil, actualizalo.

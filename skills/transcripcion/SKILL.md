@@ -1,6 +1,7 @@
 ---
-description: Busca la frase textual dicha en una reunion — devuelve parrafos verbatim de las transcripciones con link a su minuta
-argument-hint: <cliente> [fecha] ["frase"]
+name: transcripcion
+description: "Busca la frase textual dicha en una reunion — devuelve parrafos verbatim de las transcripciones con link a su minuta. Usar cuando pregunten qué se dijo textualmente en una reunión."
+argument-hint: "<cliente> [fecha] [\"frase\"]"
 ---
 
 Buscá en las transcripciones de reunión del vault: **$ARGUMENTS**. Interpretá: primer término = cliente (slug); fecha YYYY-MM-DD opcional; texto entre comillas = frase a buscar textualmente.
