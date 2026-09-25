@@ -26,6 +26,7 @@ Presentale al usuario esta guía de cluster-os, adaptada a quién es (leé el pe
 | Lint del grafo del vault | `/cluster-os:lint` | links rotos, frontmatter, bidireccionalidad |
 | Reporte de productividad semanal a demanda | `/cluster-os:reporte-semanal` | |
 | Dar de alta un cliente en Twenty CRM (subdominio + instancia + modelo de datos) | `/cluster-os:setup-crm` | P17; solo Franco; `--mock` para datos de demo |
+| Cierre de trazabilidad diaria en ClickUp (retrasadas + hubs Data + ofertas frías) | `/cluster-os:trazabilidad-clickup` | comenta como Umitoh citando el vault, patea vencidas a mañana |
 
 ## Agentes (se invocan pidiéndolos por nombre)
 
