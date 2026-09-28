@@ -1,3 +1,5 @@
+> **Archivado el 2026-09-28.** Este repositorio fue reemplazado por [`tidetrack/cluster-os`](https://github.com/tidetrack/cluster-os) (carpeta `plugin/`, versión 2.1.0), que es el hogar del arnés completo del Cluster (plugin, consola, runner, n8n). Marketplace nuevo: `/plugin marketplace add tidetrack/cluster-os` y `/plugin install cluster-os@cluster`. Las skills se invocan como `/cluster-os:<skill>`. Acá no se aceptan cambios.
+
 # cluster-os v2.0
 
 Plugin de Claude Code / Cowork del Cluster (Franco, Sergio, Dima).
